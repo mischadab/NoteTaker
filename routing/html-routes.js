@@ -1,6 +1,10 @@
 const path = require('path');
 
-// get http requests to the html
+// get requests to the html
 app.get('/', function(req, res){
-    res.SendFile(__dirname + '/../public/index.html')
+    res.SendFile(path.join(__dirname + '/../public/index.html'))
+})
+// get notes into the html
+app.get('/notes', function(req, res){
+    res.SendFile(path.join(__dirname + '/../public/notes.html'))
 })
