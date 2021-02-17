@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mischadab/NoteTaker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mischadab/NoteTaker/issues"
+  },
+  "homepage": "https://github.com/mischadab/NoteTaker#readme"
 }
