@@ -6,6 +6,7 @@ const fs = require('fs');
 const app = express();
 app.use( express.static( 'html' ) )
 
-// read post data
+// set up express to handle data parsing
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+
