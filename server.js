@@ -10,3 +10,7 @@ app.use( express.static( 'html' ) )
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+// start the server listening
+app.listen( 8080, ()=> {
+    console.log(`App listening at http://localhost:8080`)
+})
