@@ -8,3 +8,11 @@ const readFile = util.promisify(fs.readFileSync);
 const writeFile = util.promisify(fs.writeFileSync);
 
 // create class to hold CRUD
+class Storage {
+    read(){
+        return readFile('db/db.json', 'utf-8')
+    }
+    write(note){
+        return writeFile('db/db.json', JSON.stringify(note));
+    }
+}
