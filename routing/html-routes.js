@@ -4,7 +4,8 @@ const path = require('path');
 app.get('/', function(req, res){
     res.SendFile(path.join(__dirname + '/../public/index.html'))
 })
-// get notes into the notes html
-app.get('/notes', function(req, res){
+
+// all other routes into the notes html
+app.get('*', function(req, res){
     res.SendFile(path.join(__dirname + '/../public/notes.html'))
 })
