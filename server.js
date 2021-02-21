@@ -16,15 +16,20 @@ app.use( express.static( 'public' ) )
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+
+// HANDLE API CALLS
 // fetch notes existing in database
 app.get('/api/notes', (req, res) => {
-    console.log('API Request: new note saved', req.body);
+    console.log('API Request: getting existing notes from database', req.body);
     res.send(db);
 })
 
 // add new note to database
 app.post('/api/notes', (req, res) => {
-
+    console.log('API Request: save a new note into database', req.body);
+    db.push( {title:req.body.title, text:req.body.text} );
+    fs.writeFileSync('.db//db.json', JSON.stringify(db));
+    res.end();
 })
 
 
