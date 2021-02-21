@@ -17,7 +17,6 @@ app.use( express.static( 'public' ) )
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-
 // HANDLE API CALLS
 // fetch notes existing in database
 app.get('/api/notes', (req, res) => {
