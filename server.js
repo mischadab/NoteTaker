@@ -1,6 +1,7 @@
 // require dependencies 
 const express = require('express');
 const fs = require('fs');
+const uuidv1 = require('uuidv1')
 
 // db data read
 let db = JSON.parse(fs.readFileSync('./db/db.json'));
@@ -27,7 +28,7 @@ app.get('/api/notes', (req, res) => {
 // add new note to database
 app.post('/api/notes', (req, res) => {
     console.log('API Request: save a new note into database', req.body);
-    db.push( {title:req.body.title, text:req.body.text} );
+    db.push( {id: uuidv1, title:req.body.title, text:req.body.text} );
     fs.writeFileSync('./db/db.json', JSON.stringify(db));
     res.end();
 })
