@@ -33,6 +33,13 @@ app.post('/api/notes', (req, res) => {
     res.end();
 })
 
+// delete notes from database
+app.delete('/api/notes/:id', (req, res) => {
+    console.log('API Request: delete note', req.params.id);
+    db = db.filter(entry => !(entry.id == req.params.id));
+    fs.writeFileSync('./db/db.json', JSON.stringify(db));
+    res.end();
+})
 
 // server listening
 app.listen( PORT, () => {
