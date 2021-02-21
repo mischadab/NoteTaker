@@ -28,7 +28,7 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     console.log('API Request: save a new note into database', req.body);
     db.push( {title:req.body.title, text:req.body.text} );
-    fs.writeFileSync('.db//db.json', JSON.stringify(db));
+    fs.writeFileSync('./db/db.json', JSON.stringify(db));
     res.end();
 })
 
