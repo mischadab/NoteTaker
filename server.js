@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 // enable express
 const app = express();
-app.use( express.static( 'html') )
+app.use( express.static( 'public' ) )
 
 // set up express to handle data parsing
 app.use(express.urlencoded({extended: true}))
